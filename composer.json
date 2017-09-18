@@ -1,0 +1,29 @@
+{
+  "name": "teamleader-discord",
+  "version": "1.0.0",
+  "type": "webhook",
+  "description": "Advertise TeamLeader events on Discord",
+  "homepage": "https://github.com/thinfactory/teamleader-discord",
+  "license": "MIT",
+  "keywords": [
+    "webhook"
+  ],
+  "authors": [
+    {
+      "name": "THINFACTORY NV",
+      "email": "info@thinfactory.com"
+    },
+    {
+      "name": "Geert Hauwaerts",
+      "email": "geert@hauwaerts.be"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/thinfactory/teamleader-discord/issues"
+  },
+  "require": {
+    "php": ">=7.1",
+    "sumocoders/teamleader": ">=1.10",
+    "vlucas/phpdotenv": ">=2.4"
+  }
+}
