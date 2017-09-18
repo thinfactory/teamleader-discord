@@ -66,18 +66,10 @@ Information on how to use the Discord API and webhooks:
 ## Event Routing
 
 By default, all events are advertised on the `DISCORD_WEBHOOK` webhook. You can route specific events
-to another webhook by adding the event and custom webhook into the environment configuration and into
-the events array.
+to another webhook by adding the event into the environment configuration `DISCORD_WEBHOOK_EVENT_*`.
 
 For example:
 
 ```
-'events' => [
-  'default' => getenv('DISCORD_WEBHOOK'),
-  'my_event' => getenv(DISCORD_WEBHOOK_MY_EVENT')
-]
-```
-
-```
-DISCORD_WEBHOOK_MY_EVENT="DISCORD_WEBHOOK_MY_EVENT"
+DISCORD_WEBHOOK_EVENT_SALE_ACCEPTED="DISCORD_WEBHOOK_EVENT_SALE_ACCEPTED"
 ```

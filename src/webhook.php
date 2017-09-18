@@ -22,6 +22,7 @@ $dotenv->load();
 
 $cfg = json_decode(json_encode([
     'discord' => [
+        'webhook' => getenv('DISCORD_WEBHOOK'),
         'colors' => [
             'green' => 3779158,
             'red' => 14370117,
@@ -39,19 +40,21 @@ $cfg = json_decode(json_encode([
             'sale_detail' => 'sale_detail.php?id=',
             'company_detail' => 'company_detail.php?id='
         ]
-    ],
-    'events' => [
-        'default' => getenv('DISCORD_WEBHOOK')
     ]
 ]));
 
 $req = json_decode(file_get_contents("php://input"));
 $teamleader = new Teamleader($cfg->teamleader->api->group, $cfg->teamleader->api->key);
-$webhook = isset($cfg->events->{$req->event_type}) ? $cfg->events->{$req->event_type} : $cfg->events->default;
 
 if (!is_object($req)) {
     http_response_code(400);
     exit;
+}
+
+$eventhook = getenv('DISCORD_WEBHOOK_EVENT_' . strtoupper($req->event_type));
+
+if (!empty($eventhook)) {
+    $cfg->discord->webhook = $eventhook;
 }
 
 switch ($req->event_type) {
@@ -90,7 +93,7 @@ switch ($req->event_type) {
 }
 
 file_get_contents(
-    $webhook,
+    $cfg->discord->webhook,
     false,
     stream_context_create([
         'http' => [
