@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "80b5a5be1e0ed743b19ca49fe5417876",
+    "content-hash": "d252cc1113dc9190aece27dc9eb17e8f",
     "packages": [
         {
             "name": "sumocoders/teamleader",
@@ -104,7 +104,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.1"
+        "php": ">=5.5"
     },
     "platform-dev": []
 }

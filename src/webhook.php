@@ -55,7 +55,7 @@ if (!is_object($req)) {
 }
 
 switch ($req->event_type) {
-    case 'deal_signed':
+    case 'sale_accepted':
         $deal = $teamleader->dealsGetDeal($req->object_id);
         $company = $teamleader->crmGetCompany($deal->getcompanyId());
         $payload = [

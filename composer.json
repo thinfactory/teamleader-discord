@@ -22,7 +22,7 @@
     "issues": "https://github.com/thinfactory/teamleader-discord/issues"
   },
   "require": {
-    "php": ">=7.1",
+    "php": ">=5.5",
     "sumocoders/teamleader": ">=1.10",
     "vlucas/phpdotenv": ">=2.4"
   }
